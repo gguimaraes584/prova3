@@ -1,7 +1,15 @@
 import Cabecalho from "../../components/cabecalho";
 import Menu from "../../components/menu";
-
 import { Container, Conteudo } from "./styled";
+
+import React, { useRef } from 'react';
+import LoadingBar from 'react-top-loading-bar';
+import {ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
+
 
 import Api from "../../service/api";
 import { useState, useEffect } from "react";
@@ -17,12 +25,16 @@ export default function Index() {
   const [estoque, setEstoque] = useState("");
   const [linkimg, setLinkimg] = useState("");
   const [descricao, setDescricao] = useState("");
+  const [nomeComparando, setNomeComparando] = useState('');
 
   const [idAlterando, setIdAlterando] = useState(0);
+  const loading = useRef();
 
   async function listar() {
-    let r = await api.listar();
-    setProduto(r);
+        loading.current.continuousStart();
+        let r = await api.listar();
+        setProduto(r);
+        loading.current.complete();
   }
 
   async function inserir() {
@@ -37,10 +49,13 @@ export default function Index() {
         linkimg,
         descricao
       );
+      if(r.erro)
+      toast.dark(r.erro)
+      else
+      toast.dark('Produto cadastrado com sucesso!')
+    } 
 
-      if (r.erro) alert(r.erro);
-      else alert("Produto Inserido Parçaaa");
-    } else {
+    else {
       let r = await api.alterar(
         idAlterando,
         nome,
@@ -53,8 +68,10 @@ export default function Index() {
         descricao
       );
 
-      if (r.erro) alert(r.erro);
-      else alert("Produto Alterado");
+      if(r.erro)
+      toast.dark(r.erro)
+      else
+      toast.dark('Produto alterado com sucesso!')
     }
 
     limparCampos();
@@ -75,11 +92,30 @@ export default function Index() {
   }
 
   async function remover(id) {
-    let r = await api.remover(id);
-    alert("Produto Removido Zé");
-    listar();
+    loading.current.continuousStart();
+    confirmAlert({
+      title: 'Remover Produto',
+      message: `tem certeza ? ${id}`,
+      buttons: [
+        {
+          label: 'sim, remover',
+          onClick: async() => {
+              let r = await api.remover(id)
+              if(r.erro){
+                toast.dark(r.erro)
+              } else {
+                toast.dark('Produto removido com sucesso!')
+              }
+              listar();
+            }
+          },
+          {
+            label: 'Não, Cancelar!'}
+      ]
+    }) 
   }
 
+  
   async function editar(item) {
     setNome(item.nm_produto);
     setCategoria(item.ds_categoria);
@@ -90,7 +126,7 @@ export default function Index() {
     setLinkimg(item.link_img);
     setDescricao(item.ds_descricao);
     setIdAlterando(item.id_produto);
-    alert("Produto editado lindo");
+   
   }
 
   // função é categoria uma vez quando a tela abre
@@ -100,6 +136,8 @@ export default function Index() {
 
     return (
         <Container>
+          <ToastContainer draggable={false} autoClose={8000}  />
+          <LoadingBar color="blue" ref={loading}/>
             <Menu />
             <Conteudo>
                 <Cabecalho />
@@ -109,9 +147,9 @@ export default function Index() {
                         <div class="text-new-student">
                             <div class="bar-new-student"></div>
                             <div class="text-new-student"> 
-                            {idAlterando == 0
+                            {idAlterando === 0
                             ? "Novo Produto"
-                            : "Alterando Produto"}
+                            : "Alterando Produto" + " " + idAlterando}
                             </div>
                             
                         </div>
