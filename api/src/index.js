@@ -22,7 +22,7 @@ app.post('/produto', async (req, resp) => {
         
         let r = await db.tb_produto.create({
             nm_produto: nome,
-            nm_categoria: categoria,
+            ds_categoria: categoria,
             vl_preco_de: precode,
             vl_preco_por: precopor,
             vl_avaliacao: avaliacao,
@@ -46,7 +46,7 @@ app.put('/produto/:id', async (req, resp) => {
         let r = await db.tb_produto.update(
             {
                 nm_produto: nome,
-                nm_categoria: categoria,
+                ds_categoria: categoria,
                 vl_preco_de: precode,
                 vl_preco_por: precopor,
                 vl_avaliacao: avaliacao,

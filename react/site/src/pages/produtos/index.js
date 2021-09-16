@@ -82,7 +82,7 @@ export default function Index() {
 
   async function editar(item) {
     setNome(item.nm_produto);
-    setCategoria(item.nm_categoria);
+    setCategoria(item.ds_categoria);
     setAvaliacao(item.vl_avaliacao);
     setPrecopor(item.vl_preco_por);
     setPrecode(item.vl_preco_de);
@@ -199,12 +199,12 @@ export default function Index() {
                         <table class ="table-user">
                             <thead>
                                 <tr>
-                                    <th> </th>
                                     <th> ID </th>
-                                    <th> Produto </th>
-                                    <th> Categoria </th>
-                                    <th> Preço </th>
-                                    <th> Estoque </th>
+                                    <th> PRODUTO </th>
+                                    <th> CATEGORIA </th>
+                                    <th> PREÇO </th>
+                                    <th> ESTOQUE </th>
+                                  
                                     <th class="coluna-acao"> </th>
                                     <th class="coluna-acao"> </th>
                                 </tr>
@@ -222,8 +222,8 @@ export default function Index() {
                         : item.nm_produto}
                     </td>
                   </td>
-                  <td title={item.nm_produto}>
-                    <td> {item.nm_categoria} </td>
+                  <td title={item.ds_categoria}>
+                    <td> {item.ds_categoria} </td>
                   </td>
                   <td title={item.vl_preco_por}>
                     <td> {item.vl_preco_por} </td>
