@@ -39,7 +39,7 @@ export default function Index() {
       );
 
       if (r.erro) alert(r.erro);
-      else alert("Aluno Inserido Parçaaa");
+      else alert("Produto Inserido Parçaaa");
     } else {
       let r = await api.alterar(
         idAlterando,
@@ -54,7 +54,7 @@ export default function Index() {
       );
 
       if (r.erro) alert(r.erro);
-      else alert("Aluno Alterado");
+      else alert("Produto Alterado");
     }
 
     limparCampos();
@@ -76,12 +76,12 @@ export default function Index() {
 
   async function remover(id) {
     let r = await api.remover(id);
-    alert("Aluno Removido Zé");
+    alert("Produto Removido Zé");
     listar();
   }
 
   async function editar(item) {
-    setNome(item.nm_aluno);
+    setNome(item.nm_produto);
     setCategoria(item.nm_categoria);
     setAvaliacao(item.vl_avaliacao);
     setPrecopor(item.vl_preco_por);
@@ -89,8 +89,8 @@ export default function Index() {
     setEstoque(item.qtd_estoque);
     setLinkimg(item.link_img);
     setDescricao(item.ds_descricao);
-    setIdAlterando(item.id_matricula);
-    alert("Aluno editado lindo");
+    setIdAlterando(item.id_produto);
+    alert("Produto editado lindo");
   }
 
   // função é categoria uma vez quando a tela abre
@@ -111,7 +111,7 @@ export default function Index() {
                             <div class="text-new-student"> 
                             {idAlterando == 0
                             ? "Novo Produto"
-                            : "Alterando Produto" + idAlterando}
+                            : "Alterando Produto"}
                             </div>
                             
                         </div>
@@ -219,7 +219,7 @@ export default function Index() {
                       {" "}
                       {item.nm_produto != null && item.nm_produto.length >= 25
                         ? item.nm_produto.substr(0, 25) + "..."
-                        : item.nm_produto}{" "}
+                        : item.nm_produto}
                     </td>
                   </td>
                   <td title={item.nm_produto}>
