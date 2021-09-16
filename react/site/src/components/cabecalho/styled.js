@@ -18,7 +18,7 @@ const Container = styled.div`
     }
     .left-button button {
         border-radius: 50%;
-        background-color: #986CDF;
+        background-color: #119FDC;;
         width: 44px;
         height: 44px;
         border: none;
@@ -26,7 +26,7 @@ const Container = styled.div`
     }
     .refresh-button button {
         border-radius: 50%;
-        background-color: #986CDF;
+        background-color: #119FDC;;
         width: 44px;
         height: 44px;
         border: none;
@@ -44,10 +44,14 @@ const Container = styled.div`
         align-items: center;
     }
     .bottom-bar-right-header {
-        border-bottom: .5px solid #e9e9e9;
+        border-bottom: .5px solid #119FDC;;
         width: 97%;
         align-self: center;
-        background-color: #e9e9e9;
+        background-color: #119FDC;
+    }
+
+    .absolute  {
+        background-color: #119FDC;
     }
 
 `
