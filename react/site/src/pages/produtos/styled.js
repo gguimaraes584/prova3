@@ -4,7 +4,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     min-width: 100%;
-    .new-student-box {
+    .novo-produto {
         display: flex;
         flex-direction: column;
         background-color: white;
@@ -12,21 +12,21 @@ const Container = styled.div`
         padding: 2em;
             
     }
-    .bar-new-student {
+    .novop {
         border: 3px solid #119FDC;
         border-radius: .5em;
         margin-right: .4em;
         background-color: #119FDC;
     }
-    .text-new-student {
+    .novo-produto-text {
         display: flex;
         flex-direction: row;
         font-size: 32px;
     }
-    .text-new-student div {
+    .novo-produto-text div {
         font-weight: bolder;
     }
-    .input-new-student {
+    .input-nv {
         display: flex;
         flex-direction: row;
         padding-top: 2.4em;
@@ -80,7 +80,7 @@ const Container = styled.div`
         border-radius: 5px;
         padding-left: .5em;
     }
-    .name-student {
+    .nome {
         margin: 0.5em;
         font-size: 18px;
         color: #615858;
@@ -88,21 +88,21 @@ const Container = styled.div`
         padding-left: 1em;
         font-weight: 800;
     }
-    .number-student {
+    .cat {
         margin: 0.5em;
         font-size: 18px;
         color: #615858;
         width: 5.5em;
         font-weight: 800;
     }
-    .class-student {
+    .precopor {
         margin: 0.5em;
         font-size: 18px;
         color: #615858;
         width: 5.5em;
         font-weight: 800;
     }
-    .corse-student {
+    .precode {
         margin: 0.5em;
         font-size: 18px;
         color: #615858;
@@ -181,7 +181,7 @@ const Container = styled.div`
     .box-information {
         border: 1px solid #E2E2E2;
     }
-    .body-right-box {
+    .lado-direito {
         display: flex;
         flex-direction: column;
         background-color: #F5F5F5;

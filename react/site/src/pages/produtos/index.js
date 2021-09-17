@@ -151,21 +151,21 @@ export default function Index() {
       <Menu />
       <Conteudo>
         <Cabecalho />
-        <div class="body-right-box">
-          <div class="new-student-box">
-            <div class="text-new-student">
-              <div class="bar-new-student"></div>
-              <div class="text-new-student">
+        <div class="lado-direito">
+          <div class="novo-produto">
+            <div class="novo-produto-text">
+              <div class="novop"></div>
+              <div class="novo-produto-text">
                 {idAlterando === 0
                   ? "Novo Produto"
                   : "Alterando Produto" + " " + idAlterando}
               </div>
             </div>
 
-            <div class="input-new-student">
+            <div class="input-nv">
               <div class="input-left">
                 <div class="agp-input">
-                  <div class="name-student"> Nome: </div>
+                  <div class="nome"> Nome: </div>
                   <div class="input">
                     <input
                       type="text"
@@ -175,7 +175,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div class="agp-input">
-                  <div class="number-student"> Categoria: </div>
+                  <div class="cat"> Categoria: </div>
                   <div class="input">
                     <input
                       type="text"
@@ -186,7 +186,7 @@ export default function Index() {
                 </div>
 
                 <div class="agp-input">
-                  <div class="number-student"> Avaliação: </div>
+                  <div class="cat"> Avaliação: </div>
                   <div class="input">
                     {" "}
                     <input
@@ -200,7 +200,7 @@ export default function Index() {
 
               <div class="input-right">
                 <div class="agp-input">
-                  <div class="corse-student"> Preço De: </div>
+                  <div class="precode"> Preço De: </div>
                   <div class="input">
                     <input
                       type="text"
@@ -210,7 +210,7 @@ export default function Index() {
                   </div>
                 </div>
                 <div class="agp-input">
-                  <div class="class-student"> Preço POR: </div>
+                  <div class="precopor"> Preço POR: </div>
                   <div class="input">
                     <input
                       type="text"
@@ -221,7 +221,7 @@ export default function Index() {
                 </div>
 
                 <div class="agp-input">
-                  <div class="class-student"> Estoque: </div>
+                  <div class="precopor"> Estoque: </div>
                   <div class="input">
                     {" "}
                     <input
@@ -234,9 +234,9 @@ export default function Index() {
               </div>
             </div>
 
-            <div class="input-new-student-2">
+            <div class="input-nv-2">
               <div class="agp-input-2">
-                <div class="number-student"> Link Imagem: </div>
+                <div class="cat"> Link Imagem: </div>
                 <div class="input">
                   {" "}
                   <input
@@ -248,7 +248,7 @@ export default function Index() {
               </div>
 
               <div class="agp-textarea">
-                <div class="number-student"> Descrição: </div>
+                <div class="cat"> Descrição: </div>
                 <div class="input">
                   {" "}
                   <textarea
@@ -269,7 +269,7 @@ export default function Index() {
 
           <div class="student-registered-box">
             <div class="row-bar">
-              <div class="bar-new-student"> </div>
+              <div class="novop"> </div>
               <div class="text-registered-student"> Produtos Cadastrados </div>
             </div>
 
