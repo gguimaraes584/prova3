@@ -39,7 +39,7 @@ export default function Index() {
 
   async function inserir() {
     loading.current.continuousStart();
-    if (nome === "" || nome === nomeComparar) toast.dark("😪 Nome inválido");
+    if (nome === "" || nome === nomeComparar) toast.dark("😪 Nome inválidoo 😪");
     if (categoria === "") toast.dark("😪 Categoria Inválida");
     if (avaliacao === isNaN || avaliacao === "" || avaliacao < 0)
       toast.dark("😪 Avaliacao inválida");
