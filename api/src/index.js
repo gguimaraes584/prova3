@@ -19,7 +19,9 @@ app.get('/produto', async (req, resp) => {
 app.post('/produto', async (req, resp) => {
     try {
         let {nome, categoria, precode, precopor, avaliacao, descricao, estoque, imgproduto, ativo, inclusao} = req.body;
-        
+        let produtoOK = await db.tb_produto.findOne({ where: { nm_produto: nome}})
+        if(produtoOK !== null)
+            return resp.send({ erro: ' VIIIISH LEK PRODUTO JÀ CADASTRADO'})
         let r = await db.tb_produto.create({
             nm_produto: nome,
             ds_categoria: categoria,
@@ -30,7 +32,7 @@ app.post('/produto', async (req, resp) => {
             qtd_estoque: estoque,
             img_produto: imgproduto,
             bt_ativo: ativo,
-            dt_inclusao: inclusao
+            dt_inclusao: newDate()
         })
         resp.send(r);
 
