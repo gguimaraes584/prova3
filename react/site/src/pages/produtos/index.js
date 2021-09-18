@@ -290,6 +290,7 @@ export default function Index() {
               <tbody>
                 {produto.map((item, i) => (
                   <tr className={i % 2 == 0 ? "linha-alternada" : ""}>
+                    <td> <img src={item.img_produto} alt="" width="50px" height="50px"/>    </td>
                     <td> {item.id_produto} </td>
                     <td title={item.nm_produto}>
                       <td>
@@ -313,7 +314,7 @@ export default function Index() {
                       <button onClick={() => editar(item)}>
                         {" "}
                         <img
-                          src="./assets/images/editar.png"
+                          src="./assets/images/edit.svg"
                           alt=""
                           height="18px"
                         />{" "}
@@ -324,9 +325,9 @@ export default function Index() {
                       <button onClick={() => remover(item.id_produto)}>
                         {" "}
                         <img
-                          src="./assets/images/lixo.png"
+                          src="./assets/images/remove.svg"
                           alt=""
-                          height="18px"
+                          height="30px"
                         />{" "}
                       </button>{" "}
                     </td>

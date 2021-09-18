@@ -240,6 +240,73 @@ const Container = styled.div`
     .coluna-acao {
         width: .1em;
     }
+    .coluna-acao {
+        width: .1em;
+        
+    }
+    
+    .coluna-acao > button {
+        visibility: hidden;
+        background-color: #6251EB;
+        
+    }
+
+    .coluna-acao img {
+        margin-left: -5px;
+    }
+    tr:hover {
+        .coluna-acao > button {
+        visibility: visible;
+    }
+    }
+    .coluna-acao > button {
+        visibility: hidden;
+    }
+    tr:hover {
+        .coluna-acao > button {
+        visibility: visible;
+        }
+        
+    }
+    button {
+        cursor: pointer;
+    }
+    .button-create button:hover {
+        
+        transition: 2s;
+    }
+    img {
+        cursor: pointer;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     button {
         cursor: pointer;
     }
