@@ -134,7 +134,7 @@ export default function Index() {
     setPrecopor(item.vl_preco_por);
     setPrecode(item.vl_preco_de);
     setEstoque(item.qtd_estoque);
-    setLinkimg(item.link_img);
+    setLinkimg(item.img_produto);
     setDescricao(item.ds_descricao);
     setIdAlterando(item.id_produto);
   }
